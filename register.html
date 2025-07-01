@@ -1,0 +1,159 @@
+<!Doctype html>
+ <!-- register.html cwb2005 final student file -->
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Sign Up</title>
+<link href="css/final_default.css" rel="stylesheet" type="text/css" />
+<link href="css/menu.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/nav1.1.min.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script>
+    $(document).ready(function(){
+       $('#fname').focus();
+       $('#price').attr('disabled',true).css('backgroundColor','#CCC');
+       $('#slstax').attr('disabled',true).css('backgroundColor','#CCC');
+       $('#total').attr('disabled',true).css('backgroundColor','#CCC');
+       $( "#date" ).datepicker({
+        dateFormat: "yy-mm-dd"
+       });
+  
+       
+       $('#order_form').validate({
+        rules:{	
+            email:{					
+				required:true,
+				email:true
+            },
+            quant:{
+                required:true,
+                max:4
+            },  
+                fname:"required",
+			          lname: "required",	
+                street: "required",
+                city: "required",
+                state: "required",
+                zip: "required",
+                phone: "required",
+                date: "required",
+                cardhold: "required",
+                cardnum: "required",
+            
+            },
+
+            
+ 
+            
+
+			
+            messages:{
+            fname:{
+                required:"Please enter your first name."
+            },
+            lname:{
+                required:"Please enter your last name."
+            },
+            street:{
+                required:"Please enter your street address."
+            },
+            city:{
+                required:"Please enter your city."
+            },
+            state:{
+                required:"Please enter your state."
+            },
+            zip:{
+                required:"Please enter your zip code."
+            },
+            phone:{
+                required:"Please enter your phone number."
+            },
+			      email:{
+				    required:"Please enter your email.",
+				    email:"Not a valid e-mail."
+			      },
+            date:{
+              required:"Please enter a date."
+            },
+            cardhold:{
+              required:"Please enter the Name as its shown on the card."
+            },
+            cardnum:{
+              required:"Please enter your card number."
+            } 
+            
+               
+        }       
+       });
+    })
+        
+
+</script>
+
+</head>
+
+<body>
+<div id="holder">
+<div id="header">
+<h1>The Big Bike Tour</h1>
+</div> <!-- end header -->
+<div id="navigation">
+<ul>
+   <li><a href="index.html">Home</a></li>
+  <li><a href="get_ready.html">Get Ready</a>
+      <ul>
+        <li><a href="train_schd.html">Training Schedule</a></li>
+        <li><a href="http://www.healthstatus.com/calculate/cbc">Calories Burned Estimator</a></li>
+     </ul>
+  </li>
+  <li><a href="tour.html">The Tour </a>
+        <ul>
+             <li><a href="tour_miles.html">Daily Mileage</a></li>
+            <li><a href="lodging_meals.html">Lodging/Meals</a></li>
+            <li><a href="photos.html">Photo Gallery</a></li>
+          </ul>
+  </li>
+  <li><a href="register.html">Register</a></li>
+</ul>
+</div>
+<div id="main_content">
+<h1>Tour Signup</h1>
+<form action="" method="post" id="order_form" name="order_form">
+<fieldset id="contact">
+<legend>Contact Information</legend>
+<div><label for="fname" class="label">First Name:</label><input type="text" name="fname" id="fname" /></div>
+<div><label for="lname" class="label">Last Name:</label><input type="text" name="lname" id="lname" /></div>
+<div><label for="street" class="label">Street:</label><input type="text" name="street" id="street" /></div>
+<div><label for="city" class="label">City:</label><input type="text" name="city" id="city" /></div>
+<div><label for="state" class="label">State:</label><input type="text" name="state" id="state" /></div>
+<div><label for="zip" class="label">Zip Code:</label><input type="text" name="zip" id="zip"/></div>
+<div><label for="email" class="label">Email:</label><input type="text" name="email" id="email" /></div>
+<div><label for="date" class="label">Date:</label><input type="text" name="date" id="date" /></div>
+</fieldset><!-- end contact info -->
+
+<fieldset id="paymentinfo">
+<legend>Payment Information</legend>
+<div><label for="regcharge">Tour Registration:</label> $130.00</div>
+<div><label for="cdard" class="label">Credit Card:</label><select name="ccard" id="ccard">
+  <option value="Amex">American Express</option>
+  <option value="MC">Master Card</option>
+  <option value="Visa">Visa</option>
+  <option value="Disc">Discover</option>
+</select>
+<div><label for="cardhold" class="label">Card Holder Name:</label><input type="text" name="cardhold" id="cardhold" /></div>
+<div><label for="cardnum" class="label">Card Number:</label><input type="text" name="cardnum" id="cardnum" /></div>
+</fieldset><!-- end payment -->
+<input type="submit" name="submit" value="Register" /><input type="reset" name="reset"  value="Cancel" />
+
+</form>
+</div><!-- end main_content -->
+<div id="foot">
+&copy;&nbsp;<script>document.write(new Date().getFullYear())</script>  Poobah Sports LLC - <br />
+</div><!-- end foot -->
+</div><!-- end holder -->
+</body>
+</html>

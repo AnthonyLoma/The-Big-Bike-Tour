@@ -1,0 +1,32 @@
+#tabSet ul li a{
+    font-weight: bold;
+    background-color: yellow;
+    float: top;
+    position: absolute;
+    width: 10%;
+}
+
+#tabSet{
+    background-color: orange;
+    
+}
+
+#bikeprep , #traintips, #nutrit{
+    margin-top: 77px;
+    height: 100%;
+    vertical-align: bottom;
+    background-color: white; 
+}
+
+#main_content{
+    
+    background-color: orange;
+}
+
+#navigation{
+    z-index: 1999;
+}
+
+#navigation ul li{
+    z-index: 1000000000000;
+}
